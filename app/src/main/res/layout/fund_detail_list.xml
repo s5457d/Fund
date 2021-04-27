@@ -1,0 +1,90 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="45dp">
+
+    <TextView
+        android:id="@+id/level"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:gravity="center"
+        android:text="@string/level"
+        android:textSize="13sp"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/type"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/type"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:gravity="center"
+        android:text="@string/type"
+        android:textSize="13sp"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@id/level"
+        app:layout_constraintRight_toLeftOf="@id/trigger"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/trigger"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:gravity="center"
+        android:text="@string/trigger"
+        android:textSize="13sp"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@id/type"
+        app:layout_constraintRight_toLeftOf="@id/import_price"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/import_price"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:gravity="center"
+        android:text="@string/import_price"
+        android:textSize="13sp"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@id/trigger"
+        app:layout_constraintRight_toLeftOf="@id/import_num"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/import_num"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:gravity="center"
+        android:text="@string/import_num"
+        android:textSize="13sp"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@id/import_price"
+        app:layout_constraintRight_toLeftOf="@id/win_point"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/win_point"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:gravity="center"
+        android:text="@string/win_point"
+        android:textSize="13sp"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@id/import_num"
+        app:layout_constraintRight_toLeftOf="@id/import_date"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/import_date"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:gravity="center"
+        android:text="@string/import_date"
+        android:textSize="13sp"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@id/win_point"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,138 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tv_import_level"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="50dp"
+        android:text="@string/level"
+        android:textSize="30dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="@id/tv_import_price"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/sp_level"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        app:layout_constraintLeft_toLeftOf="@id/et_import_price"
+        app:layout_constraintLeft_toRightOf="@id/tv_import_level"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintWidth_percent=".3" />
+
+    <TextView
+        android:id="@+id/tv_import_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="50dp"
+        android:text="@string/type"
+        android:textSize="30dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="@id/tv_import_price"
+        app:layout_constraintTop_toBottomOf="@id/tv_import_level" />
+
+    <Spinner
+        android:id="@+id/sp_type"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        app:layout_constraintBottom_toBottomOf="@id/tv_import_type"
+        app:layout_constraintLeft_toLeftOf="@id/et_import_price"
+        app:layout_constraintLeft_toRightOf="@id/tv_import_level"
+        app:layout_constraintTop_toBottomOf="@id/sp_level"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintWidth_percent=".3" />
+
+    <TextView
+        android:id="@+id/tv_import_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="50dp"
+        android:text="@string/import_price"
+        android:textSize="30dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_import_type" />
+
+    <EditText
+        android:id="@+id/et_import_price"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toBottomOf="@id/tv_import_price"
+        app:layout_constraintLeft_toRightOf="@id/tv_import_price"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintWidth_percent=".3" />
+
+
+    <TextView
+        android:id="@+id/tv_import_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="50dp"
+        android:text="@string/import_num"
+        android:textSize="30dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_import_price" />
+
+    <EditText
+        android:id="@+id/et_import_number"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toBottomOf="@id/tv_import_number"
+        app:layout_constraintLeft_toRightOf="@id/tv_import_number"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintWidth_percent=".3" />
+
+
+    <TextView
+        android:id="@+id/tv_import_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="50dp"
+        android:text="@string/import_date"
+        android:textSize="30dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_import_number" />
+
+    <EditText
+        android:id="@+id/et_import_date"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toBottomOf="@id/tv_import_date"
+        app:layout_constraintLeft_toRightOf="@id/tv_import_date"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintWidth_percent=".3" />
+
+    <Button
+        android:id="@+id/import_confirm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:text="@string/confirm"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/import_cancel" />
+
+    <Button
+        android:id="@+id/import_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:text="@string/cancel"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/import_confirm"
+        app:layout_constraintRight_toRightOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

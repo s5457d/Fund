@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:gravity="center"
+        android:text="@string/name"
+        android:textSize="25sp"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/code"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/name2"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:gravity="center"
+        android:text="@string/name"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/name"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/code"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/name" />
+
+    <TextView
+        android:id="@+id/code"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:gravity="center"
+        android:text="@string/code"
+        android:textSize="25sp"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@id/name"
+        app:layout_constraintRight_toLeftOf="@id/last"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/code2"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:gravity="center"
+        android:text="@string/code"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/code"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@id/name"
+        app:layout_constraintRight_toLeftOf="@id/last"
+        app:layout_constraintStart_toEndOf="@+id/name"
+        app:layout_constraintTop_toBottomOf="@+id/code" />
+
+    <TextView
+        android:id="@+id/last"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:gravity="center"
+        android:text="@string/last"
+        android:textSize="25sp"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@id/code"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/last2"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:gravity="center"
+        android:text="@string/last"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/last"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@id/code"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/code"
+        app:layout_constraintTop_toBottomOf="@+id/last" />
+
+    <Button
+        android:id="@+id/bt_modify"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="200dp"
+        android:text="@string/modify"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/bt_delete"
+        app:layout_constraintTop_toBottomOf="@id/name2" />
+
+    <Button
+        android:id="@+id/bt_delete"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="200dp"
+        android:text="@string/delete"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@id/bt_modify"
+        app:layout_constraintRight_toLeftOf="@id/bt_set"
+        app:layout_constraintTop_toBottomOf="@id/code2" />
+
+    <Button
+        android:id="@+id/bt_set"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="200dp"
+        android:text="@string/set"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@id/bt_delete"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/last2" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/display_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/bt_modify">
+
+        <TextView
+            android:id="@+id/level"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:gravity="center"
+            android:text="@string/level"
+            android:textSize="13sp"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/type"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/type"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:gravity="center"
+            android:text="@string/type"
+            android:textSize="13sp"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintLeft_toRightOf="@id/level"
+            app:layout_constraintRight_toLeftOf="@id/trigger"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/trigger"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:gravity="center"
+            android:text="@string/trigger"
+            android:textSize="13sp"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintLeft_toRightOf="@id/type"
+            app:layout_constraintRight_toLeftOf="@id/import_price"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/import_price"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:gravity="center"
+            android:text="@string/import_price"
+            android:textSize="13sp"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintLeft_toRightOf="@id/trigger"
+            app:layout_constraintRight_toLeftOf="@id/import_num"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/import_num"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:gravity="center"
+            android:text="@string/import_num"
+            android:textSize="13sp"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintLeft_toRightOf="@id/import_price"
+            app:layout_constraintRight_toLeftOf="@id/win_point"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/win_point"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:gravity="center"
+            android:text="@string/win_point"
+            android:textSize="13sp"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintLeft_toRightOf="@id/import_num"
+            app:layout_constraintRight_toLeftOf="@id/import_date"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/import_date"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:gravity="center"
+            android:text="@string/import_date"
+            android:textSize="13sp"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintLeft_toRightOf="@id/win_point"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/detail_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/display_detail" />
+
+    <Button
+        android:id="@+id/bt_import"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:text="@string/import1"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/bt_export"
+        app:layout_constraintBottom_toTopOf="@id/export_level" />
+
+    <Button
+        android:id="@+id/bt_export"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:text="@string/export1"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@id/bt_import"
+        app:layout_constraintRight_toLeftOf="@id/bt_history"
+        app:layout_constraintBottom_toTopOf="@id/export_level" />
+
+    <Button
+        android:id="@+id/bt_history"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:text="@string/history"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@id/bt_export"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/export_level" />
+
+    <TextView
+        android:id="@+id/export_level"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:gravity="center"
+        android:text="@string/level"
+        android:textSize="13sp"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/export_type"
+        app:layout_constraintBottom_toTopOf="@id/detail_export_list" />
+
+    <TextView
+        android:id="@+id/export_type"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:gravity="center"
+        android:text="@string/type"
+        android:textSize="13sp"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@id/export_level"
+        app:layout_constraintRight_toLeftOf="@id/export_import_date"
+        app:layout_constraintBottom_toTopOf="@id/detail_export_list" />
+
+    <TextView
+        android:id="@+id/export_import_date"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:gravity="center"
+        android:text="@string/import_date"
+        android:textSize="13sp"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@id/export_type"
+        app:layout_constraintRight_toLeftOf="@id/export_export_date"
+        app:layout_constraintBottom_toTopOf="@id/detail_export_list" />
+
+    <TextView
+        android:id="@+id/export_export_date"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:gravity="center"
+        android:text="@string/export_date"
+        android:textSize="13sp"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@id/export_import_date"
+        app:layout_constraintRight_toLeftOf="@id/export_import_price"
+        app:layout_constraintBottom_toTopOf="@id/detail_export_list" />
+
+    <TextView
+        android:id="@+id/export_import_price"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:gravity="center"
+        android:text="@string/import_price"
+        android:textSize="13sp"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@id/export_export_date"
+        app:layout_constraintRight_toLeftOf="@id/export_export_price"
+        app:layout_constraintBottom_toTopOf="@id/detail_export_list" />
+
+    <TextView
+        android:id="@+id/export_export_price"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:gravity="center"
+        android:text="@string/export_price"
+        android:textSize="13sp"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@id/export_import_price"
+        app:layout_constraintRight_toLeftOf="@id/export_export_number"
+        app:layout_constraintBottom_toTopOf="@id/detail_export_list" />
+
+    <TextView
+        android:id="@+id/export_export_number"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:gravity="center"
+        android:text="@string/export_price"
+        android:textSize="13sp"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@id/export_export_price"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/detail_export_list" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/detail_export_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

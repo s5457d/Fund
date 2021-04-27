@@ -1,0 +1,48 @@
+<resources>
+    <string name="app_name">Fund</string>
+    <string name="name">名称</string>
+    <string name="code">编码</string>
+    <string name="last">最新</string>
+    <string name="add">添加</string>
+    <string name="save">保存</string>
+    <string name="cancel">取消</string>
+    <string name="refresh">刷新</string>
+    <string name="modify">修改</string>
+    <string name="delete">删除</string>
+    <string name="confirm">确定</string>
+    <string name="base_got_it">知道了</string>
+    <string name="set">设置</string>
+    <string name="import1">买入</string>
+    <string name="export1">卖出</string>
+    <string name="history">历史</string>
+    <string name="level">档位</string>
+    <string name="trigger">触发价</string>
+    <string name="import_price">买入价格</string>
+    <string name="export_price">卖出价格</string>
+    <string name="import_num">买入股数</string>
+    <string name="export_num">卖出股数</string>
+    <string name="win_point">盈利点数</string>
+    <string name="import_date">买入日期</string>
+    <string name="export_date">卖出日期</string>
+    <string name="type">类型</string>
+
+
+    <string-array name="level">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+    </string-array>
+
+    <string-array name="type">
+        <item>A跟车</item>
+        <item>B自选</item>
+    </string-array>
+
+</resources>

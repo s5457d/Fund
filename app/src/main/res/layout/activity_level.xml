@@ -1,0 +1,166 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+    <TextView
+        android:id="@+id/tv_level_code"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="@string/code"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="@id/tv_level_trigger"
+        app:layout_constraintLeft_toLeftOf="@id/tv_level_level"
+        app:layout_constraintRight_toLeftOf="@id/tv_level_code_value"
+        app:layout_constraintStart_toStartOf="@id/tv_level_trigger"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_level_code_value"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        app:layout_constraintBottom_toBottomOf="@id/tv_level_code"
+        app:layout_constraintLeft_toRightOf="@id/tv_level_code"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="@id/et_level_trigger"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintWidth_percent=".3" />
+
+
+    <TextView
+        android:id="@+id/tv_level_level"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/level"
+        android:textSize="20dp"
+        app:layout_constraintLeft_toLeftOf="@id/tv_level_trigger"
+        app:layout_constraintRight_toRightOf="@id/tv_level_trigger"
+        app:layout_constraintTop_toBottomOf="@id/tv_level_code" />
+
+    <Spinner
+        android:id="@+id/sp_level"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="156dp"
+        app:layout_constraintBottom_toBottomOf="@id/tv_level_level"
+        app:layout_constraintLeft_toLeftOf="@id/et_level_trigger"
+        app:layout_constraintLeft_toRightOf="@id/tv_level_level"
+        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintWidth_percent=".3" />
+
+    <TextView
+        android:id="@+id/tv_level_type"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/type"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toStartOf="@id/et_level_trigger"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="@id/tv_level_trigger"
+        app:layout_constraintStart_toStartOf="@id/tv_level_trigger"
+        app:layout_constraintTop_toBottomOf="@id/tv_level_level" />
+
+    <Spinner
+        android:id="@+id/sp_type"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        app:layout_constraintBottom_toBottomOf="@id/tv_level_type"
+        app:layout_constraintLeft_toLeftOf="@id/et_level_trigger"
+        app:layout_constraintLeft_toRightOf="@id/tv_level_level"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintWidth_percent=".3" />
+
+    <TextView
+        android:id="@+id/tv_level_trigger"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/trigger"
+        android:textSize="20dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_level_type" />
+
+    <EditText
+        android:id="@+id/et_level_trigger"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toBottomOf="@id/tv_level_trigger"
+        app:layout_constraintLeft_toRightOf="@id/tv_level_trigger"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintWidth_percent=".3" />
+
+
+    <TextView
+        android:id="@+id/tv_list_level_level"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="@string/level"
+        android:textSize="25sp"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/tv_list_level_type"
+        app:layout_constraintTop_toBottomOf="@id/level_add" />
+
+    <TextView
+        android:id="@+id/tv_list_level_type"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="@string/type"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="@id/tv_list_level_level"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@id/tv_list_level_level"
+        app:layout_constraintRight_toLeftOf="@id/tv_list_level_trigger" />
+
+    <TextView
+        android:id="@+id/tv_list_level_trigger"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="@string/trigger"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="@id/tv_list_level_level"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@id/tv_list_level_type"
+        app:layout_constraintRight_toRightOf="parent" />
+
+
+    <Button
+        android:id="@+id/level_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:text="@string/add"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/level_modify"
+        app:layout_constraintTop_toBottomOf="@id/tv_level_trigger" />
+
+    <Button
+        android:id="@+id/level_modify"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/modify"
+        app:layout_constraintBottom_toBottomOf="@id/level_add"
+        app:layout_constraintLeft_toRightOf="@id/level_add"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/level_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_list_level_level" />
+</androidx.constraintlayout.widget.ConstraintLayout>

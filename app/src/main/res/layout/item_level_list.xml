@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="45dp">
+
+    <TextView
+        android:id="@+id/level_item_level"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:gravity="center"
+        android:text="@string/level"
+        android:textSize="20sp"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/level_item_type"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/level_item_type"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:gravity="center"
+        android:text="@string/type"
+        android:textSize="20sp"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@id/level_item_level"
+        app:layout_constraintRight_toLeftOf="@id/level_item_trigger"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/level_item_trigger"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:gravity="center"
+        android:text="@string/trigger"
+        android:textSize="20sp"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@id/level_item_type"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
