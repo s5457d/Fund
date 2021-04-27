@@ -185,10 +185,11 @@ public class SettingActivity extends AppCompatActivity {
                                                 }
                                             });
                                         }
-                                        if (mFundLevelData.size() > 0) {
-                                            AppDatabase.getInstance(SettingActivity.this).FundLevelDataDao().deleteFundLevelDatas(mFundLevelData);
-                                            initData();
-                                        }
+//                                        if (mFundLevelData.size() > 0) {
+//                                            AppDatabase.getInstance(SettingActivity.this).FundLevelDataDao().deleteFundLevelDatas(mFundLevelData);
+//                                            initData();
+//                                        }
+                                        initData();
                                     }
                                 }).start();
                             }
@@ -213,9 +214,27 @@ public class SettingActivity extends AppCompatActivity {
         findViewById(R.id.bt_import).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(SettingActivity.this, ImportActivity.class);
-                intent.putExtra(ImportActivity.CODE, mFundData.code);
-                startActivityForResult(intent, ImportActivity.IMPORT_REQUEST_CODE);
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        List<FundLevelData> fundLevelData1 = AppDatabase.getInstance(SettingActivity.this).FundLevelDataDao().allFundLevelDatasByCode(mFundData.code, "2");
+                        if (fundLevelData1.size() <= 0) {
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    Toast.makeText(SettingActivity.this, "您没有设置任何的档位", Toast.LENGTH_LONG).show();
+                                }
+                            });
+                            return;
+                        }
+
+                        Intent intent = new Intent(SettingActivity.this, ImportActivity.class);
+                        intent.putExtra(ImportActivity.CODE, mFundData.code);
+                        startActivityForResult(intent, ImportActivity.IMPORT_REQUEST_CODE);
+                    }
+                }).start();
+
+
             }
         });
 
@@ -257,8 +276,9 @@ public class SettingActivity extends AppCompatActivity {
                         fundLevelData.importPrice = importData.getPrice();
                         fundLevelData.importNum = importData.getNumber();
                         fundLevelData.importDate = importData.getDate();
-                        List<FundLevelData> fundLevelData1 = AppDatabase.getInstance(SettingActivity.this).FundLevelDataDao().allFundLevelDatasByCode(mFundData.code, "2");
-                        fundLevelData.trigger = fundLevelData1.get(0).trigger;
+                        Log.i(tag, "买入数据:"+ fundLevelData.toString());
+                        FundLevelData fundLevelData1 = AppDatabase.getInstance(SettingActivity.this).FundLevelDataDao().fundLevelDatasByCodeLevel(fundLevelData.code, fundLevelData.level,"2");
+                        fundLevelData.trigger = fundLevelData1.trigger;
                         fundLevelData.done = "0";
                     } else {
                         importData = (ImportData) data.getExtras().get(ExportActivity.key);

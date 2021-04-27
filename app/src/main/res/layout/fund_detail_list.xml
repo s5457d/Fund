@@ -70,6 +70,7 @@
         android:gravity="center"
         android:text="@string/win_point"
         android:textSize="13sp"
+        android:visibility="gone"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintLeft_toRightOf="@id/import_num"
         app:layout_constraintRight_toLeftOf="@id/import_date"
