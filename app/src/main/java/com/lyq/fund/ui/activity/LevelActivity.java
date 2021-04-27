@@ -108,6 +108,17 @@ public class LevelActivity extends AppCompatActivity {
                     new Thread(new Runnable() {
                         @Override
                         public void run() {
+
+                            FundLevelData fundLevelData = AppDatabase.getInstance(LevelActivity.this).FundLevelDataDao().fundLevelDatasByCodeLevel(mCode, mFundLevelData.level, "2");
+                            if (fundLevelData != null) {
+                                runOnUiThread(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        Toast.makeText(LevelActivity.this, "该档位已经设置过了", Toast.LENGTH_SHORT).show();
+                                    }
+                                });
+                                return;
+                            }
                             AppDatabase.getInstance(LevelActivity.this).FundLevelDataDao().insertFundLevelDatas(mFundLevelData);
                             runOnUiThread(new Runnable() {
                                 @Override
