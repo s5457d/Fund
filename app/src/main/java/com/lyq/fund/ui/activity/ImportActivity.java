@@ -13,18 +13,22 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.lyq.fund.R;
+import com.lyq.fund.bean.FundLevelData;
 import com.lyq.fund.bean.ImportData;
+import com.lyq.fund.database.AppDatabase;
 
 public class ImportActivity extends AppCompatActivity {
 
     public static final String tag = ImportActivity.class.getSimpleName();
     public static final String key = "key";
+    public static final String CODE = "code";
     public static final int IMPORT_REQUEST_CODE = 0;
     private EditText mEtPrice;
     private EditText mEtNumber;
     private EditText mEtDate;
     private Spinner mSpLevel;
     private Spinner mSpType;
+    private String code;
 
     private final ImportData mImportData = new ImportData();
 
@@ -32,6 +36,8 @@ public class ImportActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_import);
+
+        code = getIntent().getStringExtra(CODE);
 
         init();
 
@@ -101,10 +107,28 @@ public class ImportActivity extends AppCompatActivity {
                 mImportData.setNumber(mEtNumber.getText().toString());
                 mImportData.setPrice(mEtPrice.getText().toString());
 
-                Intent intent = new Intent();
-                intent.putExtra(key, mImportData);
-                setResult(IMPORT_REQUEST_CODE, intent);
-                finish();
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        FundLevelData fundLevelData = AppDatabase.getInstance(ImportActivity.this).FundLevelDataDao().fundLevelDatasByCodeLevel(code, mImportData.getLevel(), "2");
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                if (fundLevelData == null) {
+                                    Toast.makeText(ImportActivity.this, "您并没有设置该买入的档位", Toast.LENGTH_LONG).show();
+                                    return;
+                                }
+
+                                Intent intent = new Intent();
+                                intent.putExtra(key, mImportData);
+                                setResult(IMPORT_REQUEST_CODE, intent);
+                                finish();
+                            }
+                        });
+
+                    }
+                }).start();
+
             }
         });
 

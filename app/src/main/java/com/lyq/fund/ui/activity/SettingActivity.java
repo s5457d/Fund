@@ -1,6 +1,7 @@
 package com.lyq.fund.ui.activity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -25,6 +26,7 @@ import com.lyq.fund.database.AppDatabase;
 import com.lyq.fund.ui.dialog.BaseDialog;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class SettingActivity extends AppCompatActivity {
 
@@ -40,7 +42,8 @@ public class SettingActivity extends AppCompatActivity {
     private TextView mName2;
     private ArrayList<FundLevelData> mFundLevelData;
     private ArrayList<FundLevelData> mFundLevelDataExport;
-    private long selectID = 0;
+    private long selectID = -1;
+    private View selectView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -123,6 +126,12 @@ public class SettingActivity extends AppCompatActivity {
         mAdapter.setOnItemLongClickListener(new FundLevelAdapter.onItemLongClickListener() {
             @Override
             public void onItemLongClick(View itemView, int positon) {
+                itemView.setBackgroundColor(Color.BLUE);
+
+                if (selectView != null && selectView != itemView) {
+                    selectView.setBackgroundColor(Color.WHITE);
+                }
+                selectView = itemView;
                 selectID = mFundLevelData.get(positon).id;
                 Toast.makeText(SettingActivity.this, "选择成功", Toast.LENGTH_SHORT).show();
             }
@@ -205,6 +214,7 @@ public class SettingActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(SettingActivity.this, ImportActivity.class);
+                intent.putExtra(ImportActivity.CODE, mFundData.code);
                 startActivityForResult(intent, ImportActivity.IMPORT_REQUEST_CODE);
             }
         });
@@ -212,6 +222,10 @@ public class SettingActivity extends AppCompatActivity {
         findViewById(R.id.bt_export).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if (selectID == -1) {
+                    Toast.makeText(SettingActivity.this, "请先选择一条记录后，再点击卖出", Toast.LENGTH_LONG).show();
+                    return;
+                }
                 Intent intent = new Intent(SettingActivity.this, ExportActivity.class);
                 startActivityForResult(intent, ExportActivity.EXPORT_REQUEST_CODE);
             }
@@ -243,6 +257,8 @@ public class SettingActivity extends AppCompatActivity {
                         fundLevelData.importPrice = importData.getPrice();
                         fundLevelData.importNum = importData.getNumber();
                         fundLevelData.importDate = importData.getDate();
+                        List<FundLevelData> fundLevelData1 = AppDatabase.getInstance(SettingActivity.this).FundLevelDataDao().allFundLevelDatasByCode(mFundData.code, "2");
+                        fundLevelData.trigger = fundLevelData1.get(0).trigger;
                         fundLevelData.done = "0";
                     } else {
                         importData = (ImportData) data.getExtras().get(ExportActivity.key);

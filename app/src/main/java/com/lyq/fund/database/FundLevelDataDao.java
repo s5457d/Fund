@@ -25,6 +25,8 @@ public interface FundLevelDataDao {
     @Query("select * from FundLevel where id = :id")
     FundLevelData fundLevelDatasByID(long id);
 
+    @Query("select * from FundLevel where code = :code and level = :level and done =:done")
+    FundLevelData fundLevelDatasByCodeLevel(String code, String level, String done);
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     long[] insertFundLevelDatas(FundLevelData... fundDatas);
