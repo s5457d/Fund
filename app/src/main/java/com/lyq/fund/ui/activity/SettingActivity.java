@@ -276,8 +276,8 @@ public class SettingActivity extends AppCompatActivity {
                         fundLevelData.importPrice = importData.getPrice();
                         fundLevelData.importNum = importData.getNumber();
                         fundLevelData.importDate = importData.getDate();
-                        Log.i(tag, "买入数据:"+ fundLevelData.toString());
-                        FundLevelData fundLevelData1 = AppDatabase.getInstance(SettingActivity.this).FundLevelDataDao().fundLevelDatasByCodeLevel(fundLevelData.code, fundLevelData.level,"2");
+                        Log.i(tag, "买入数据:" + fundLevelData.toString());
+                        FundLevelData fundLevelData1 = AppDatabase.getInstance(SettingActivity.this).FundLevelDataDao().fundLevelDatasByCodeLevel(fundLevelData.code, fundLevelData.level, "2");
                         fundLevelData.trigger = fundLevelData1.trigger;
                         fundLevelData.done = "0";
                     } else {

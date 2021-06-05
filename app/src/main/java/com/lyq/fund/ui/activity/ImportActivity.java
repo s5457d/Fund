@@ -28,7 +28,7 @@ public class ImportActivity extends AppCompatActivity {
 
     public static final String tag = ImportActivity.class.getSimpleName();
     private Date selectDate = DateUtil.StringToDate(DateUtil.getCurDateStr(), "yyyy-MM-dd");
-    private SimpleDateFormat format = new SimpleDateFormat("yyyyMMdd");
+    private final SimpleDateFormat format = new SimpleDateFormat("yyyyMMdd");
     public static final String key = "key";
     public static final String CODE = "code";
     public static final int IMPORT_REQUEST_CODE = 0;

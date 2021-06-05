@@ -23,7 +23,7 @@ public class ExportActivity extends AppCompatActivity {
 
     public static final String tag = ExportActivity.class.getSimpleName();
     private Date selectDate = DateUtil.StringToDate(DateUtil.getCurDateStr(), "yyyy-MM-dd");
-    private SimpleDateFormat format = new SimpleDateFormat("yyyyMMdd");
+    private final SimpleDateFormat format = new SimpleDateFormat("yyyyMMdd");
     public static final String key = "key";
     public static final int EXPORT_REQUEST_CODE = 1;
     private EditText mEtPrice;

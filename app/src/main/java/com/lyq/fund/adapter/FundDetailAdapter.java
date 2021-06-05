@@ -99,7 +99,8 @@ public class FundDetailAdapter extends RecyclerView.Adapter<FundDetailAdapter.Tr
     }
 
     private FundLevelAdapter.onItemLongClickListener onItemLongClickListener;
-    public interface onItemLongClickListener{
+
+    public interface onItemLongClickListener {
         void onItemLongClick(View itemView, int positon);
     }
 

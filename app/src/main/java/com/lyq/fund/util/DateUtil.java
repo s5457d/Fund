@@ -21,7 +21,7 @@ public class DateUtil {
     }
 
     public static Date str2Date(String str) {
-        return str2Date(str, (String) null);
+        return str2Date(str, null);
     }
 
     public static Date str2Date(String str, String format) {
@@ -73,7 +73,7 @@ public class DateUtil {
     }
 
     public static Calendar str2Calendar(String str) {
-        return str2Calendar(str, (String) null);
+        return str2Calendar(str, null);
     }
 
     public static Calendar str2Calendar(String str, String format) {
@@ -88,7 +88,7 @@ public class DateUtil {
     }
 
     public static String date2Str(Calendar c) {
-        return date2Str((Calendar) c, (String) null);
+        return date2Str(c, null);
     }
 
     public static String date2Str(Calendar c, String format) {
@@ -96,7 +96,7 @@ public class DateUtil {
     }
 
     public static String date2Str(Date d) {
-        return date2Str((Date) d, (String) null);
+        return date2Str(d, null);
     }
 
     public static String date2Str(Date d, String format) {

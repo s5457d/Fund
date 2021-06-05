@@ -14,12 +14,12 @@ import com.lyq.fund.R;
 
 public class BaseDialog extends Dialog implements View.OnClickListener {
 
-    private Context mContext;
+    private final Context mContext;
     private OnClickListener mListener;
-    private TextView mTvTitle;
-    private Button mBtnCancel;
-    private Button mBtnConfirm;
-    private ImageView mIvIcon;
+    private final TextView mTvTitle;
+    private final Button mBtnCancel;
+    private final Button mBtnConfirm;
+    private final ImageView mIvIcon;
 
     private BaseDialog(Context context) {
         this(context, "", true);
@@ -97,7 +97,7 @@ public class BaseDialog extends Dialog implements View.OnClickListener {
 
     public static class Builder {
 
-        private BaseDialog baseDialog;
+        private final BaseDialog baseDialog;
 
         public Builder(Context context) {
             baseDialog = new BaseDialog(context);

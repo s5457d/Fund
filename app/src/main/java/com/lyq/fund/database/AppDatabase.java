@@ -20,6 +20,7 @@ public abstract class AppDatabase extends RoomDatabase {
     private static AppDatabase appDatabase;
 
     public abstract FundDataDao FundDataDao();
+
     public abstract FundLevelDataDao FundLevelDataDao();
 
     public static AppDatabase getInstance(Context context) {

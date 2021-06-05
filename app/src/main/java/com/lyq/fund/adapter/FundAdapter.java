@@ -43,7 +43,7 @@ public class FundAdapter extends RecyclerView.Adapter<FundAdapter.TransListViewH
         holder.name.setText(fundData.name);
         holder.code.setText(fundData.code);
         holder.last.setText(fundData.lastPrice);
-        
+
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

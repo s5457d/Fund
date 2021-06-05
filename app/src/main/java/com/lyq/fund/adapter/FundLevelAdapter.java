@@ -41,7 +41,7 @@ public class FundLevelAdapter extends RecyclerView.Adapter<FundLevelAdapter.Tran
         holder.level.setText(fundLevelData.level);
         holder.type.setText(fundLevelData.type);
         holder.trigger.setText(fundLevelData.trigger);
-        
+
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -89,7 +89,8 @@ public class FundLevelAdapter extends RecyclerView.Adapter<FundLevelAdapter.Tran
     }
 
     private onItemLongClickListener onItemLongClickListener;
-    public interface onItemLongClickListener{
+
+    public interface onItemLongClickListener {
         void onItemLongClick(View itemView, int positon);
     }
 
