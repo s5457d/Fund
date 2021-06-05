@@ -22,6 +22,7 @@
         android:gravity="center"
         android:text="@string/type"
         android:textSize="13sp"
+        android:visibility="gone"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintLeft_toRightOf="@id/export_item_level"
         app:layout_constraintRight_toLeftOf="@id/export_import_item_date" />

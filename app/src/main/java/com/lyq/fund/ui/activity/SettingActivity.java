@@ -102,7 +102,7 @@ public class SettingActivity extends AppCompatActivity {
 
     private void initData() {
         mFundLevelData = (ArrayList<FundLevelData>) AppDatabase.getInstance(this).FundLevelDataDao().allFundLevelDatasByCode(mFundData.code, "0");
-        mFundLevelDataExport = (ArrayList<FundLevelData>) AppDatabase.getInstance(this).FundLevelDataDao().allFundLevelDatasByCode(mFundData.code, "1");
+        mFundLevelDataExport = (ArrayList<FundLevelData>) AppDatabase.getInstance(this).FundLevelDataDao().allExportFundLevelDatasByCode(mFundData.code, "1");
         runOnUiThread(new Runnable() {
             @Override
             public void run() {

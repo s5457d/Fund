@@ -22,6 +22,9 @@ public interface FundLevelDataDao {
     @Query("select * from FundLevel where code = :code and done =:done")
     List<FundLevelData> allFundLevelDatasByCode(String code, String done);
 
+    @Query("select * from FundLevel where code = :code and done =:done order by exportDate")
+    List<FundLevelData> allExportFundLevelDatasByCode(String code, String done);
+
     @Query("select * from FundLevel where id = :id")
     FundLevelData fundLevelDatasByID(long id);
 
